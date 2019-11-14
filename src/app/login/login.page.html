@@ -22,13 +22,15 @@
 
     <br>
 
-    <ion-button expand="block" color="tertiary" (click)="signUp()"  >Inscription</ion-button>
+    <ion-button expand="block" color="tertiary" (click)="signUp()" >Inscription</ion-button>
 
   </div>
 
   <div *ngIf="connected">
     <!-- Si l'utilisateur est connecté -->
 <H1>Vous etes bien connecté</H1>
+    <ion-button href="patient" expand="block" color="secondary">Mon espace</ion-button>
+
     <ion-button expand="block" color="danger" (click)="logout()">Déconnexion</ion-button>
   </div>
 

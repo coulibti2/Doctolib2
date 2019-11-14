@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -13,7 +12,7 @@ export class LoginPage  {
   };
   connected:boolean;
   constructor(
-      public  afAuth: AngularFireAuth
+      public  afAuth: AngularFireAuth,
   ){
     this.afAuth.authState.subscribe(auth => {
       if (!auth) {

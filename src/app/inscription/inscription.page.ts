@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: 'app-inscription',
@@ -43,7 +44,8 @@ export class InscriptionPage implements OnInit {
   };
 
   constructor(
-      public formBuilder: FormBuilder
+      public formBuilder: FormBuilder,
+      public afDB: AngularFireDatabase
   ) {
     this.inscriptionForm = this.formBuilder.group({
       nom: new FormControl('', Validators.compose([
