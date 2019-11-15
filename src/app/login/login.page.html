@@ -1,5 +1,8 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
     <ion-title>login</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -17,21 +20,34 @@
     <ion-input type="password" [(ngModel)]="dataUser.password"></ion-input>
   </ion-item>
     <br>
-
-    <ion-button expand="block" color="primary" (click)="login()">Connexion</ion-button>
+    <ion-button color="primary" (click)="login()" shape="round" size= "defaut">Patient</ion-button>
+    <ion-button color="primary" (click)="login1()" shape="round" size= "medium">Doctor</ion-button>
 
     <br>
-
     <ion-button expand="block" color="tertiary" (click)="signUp()" >Inscription</ion-button>
+
 
   </div>
 
-  <div *ngIf="connected">
+  <div *ngIf="test === 'patient'">
     <!-- Si l'utilisateur est connecté -->
-<H1>Vous etes bien connecté</H1>
+    <H1>Vous etes bien connecté en tant que patient</H1>
     <ion-button href="patient" expand="block" color="secondary">Mon espace</ion-button>
-
     <ion-button expand="block" color="danger" (click)="logout()">Déconnexion</ion-button>
+  </div>
+
+  <div *ngIf="test === 'doctor'">
+    <!-- Si l'utilisateur est connecté -->
+    <H1>Vous etes bien connecté en tant que doctor</H1>
+    <ion-button href="doctor" expand="block" color="secondary">Mon espace</ion-button>
+    <ion-button expand="block" color="danger" (click)="logout()">Déconnexion</ion-button>
+  </div>
+
+  <div *ngIf="test === 'inscription'">
+    <!-- Si l'utilisateur est connecté -->
+    <H1>Vous etes bien inscrit sur doctolib!</H1>
+    <ion-label><ion-button (click)="logout()" href="home" color="danger"> Se déconnecter </ion-button></ion-label>
+
   </div>
 
 

@@ -28,7 +28,7 @@
           </ion-item>
           <ion-item>
             <ion-icon name="hourglass"></ion-icon>
-            <ion-label><ion-button href="home"color="light"> Rendez-Vous Planifiés </ion-button></ion-label>
+            <ion-label><ion-button href="calendar"color="light"> Rendez-Vous Planifiés </ion-button></ion-label>
           </ion-item>
           <ion-item>
             <ion-icon name="time"></ion-icon>
@@ -36,7 +36,7 @@
           </ion-item>
           <ion-item>
             <ion-icon name="log-out"></ion-icon>
-            <ion-label><ion-button href="home" color="danger"> Se déconnecter </ion-button></ion-label>
+            <ion-label><ion-button (click)="logout()" href="home" color="danger"> Se déconnecter </ion-button></ion-label>
           </ion-item>
         </ion-list>
       </ion-content>

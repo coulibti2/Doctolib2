@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MenuController} from '@ionic/angular';
+import { AngularFireAuth } from '@angular/fire/auth';
+
 @Component({
   selector: 'app-patient',
   templateUrl: './patient.page.html',
@@ -7,7 +9,10 @@ import {MenuController} from '@ionic/angular';
 })
 export class PatientPage implements OnInit {
 
-  constructor(private menu: MenuController) { }
+  constructor(
+      private menu: MenuController,
+      public  afAuth: AngularFireAuth
+  ) { }
 
   openFirst() {
     this.menu.enable(true, 'first');
@@ -28,4 +33,7 @@ export class PatientPage implements OnInit {
   ngOnInit() {
   }
 
+  logout() {
+    this.afAuth.auth.signOut();
+  }
 }
