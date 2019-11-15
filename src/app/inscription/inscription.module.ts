@@ -8,19 +8,19 @@ import { IonicModule } from '@ionic/angular';
 import { InscriptionPage } from './inscription.page';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: InscriptionPage
-  }
+    {
+        path: '',
+        component: InscriptionPage
+    }
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    IonicModule,
-    RouterModule.forChild(routes)
-  ],
-  declarations: [InscriptionPage]
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        IonicModule,
+        RouterModule.forChild(routes)
+    ],
+    declarations: [InscriptionPage]
 })
 export class InscriptionPageModule {}

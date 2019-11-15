@@ -11,6 +11,9 @@ const routes: Routes = [
   { path: 'doctor', loadChildren: './doctor/doctor.module#DoctorPageModule' },
   { path: 'calendar', loadChildren: './calendar/calendar.module#CalendarPageModule' },
   { path: 'event', loadChildren: './event/event.module#EventPageModule' },
+  { path: 'login2', loadChildren: './login2/login2.module#Login2PageModule' },
+  { path: 'form', loadChildren: './form/form.module#FormPageModule' },
+  { path: 'inscription2', loadChildren: './inscription2/inscription2.module#Inscription2PageModule' },
 ];
 
 @NgModule({

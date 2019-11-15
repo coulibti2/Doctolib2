@@ -12,7 +12,7 @@ describe('InscriptionPage', () => {
       declarations: [ InscriptionPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
-    .compileComponents();
+        .compileComponents();
   }));
 
   beforeEach(() => {
