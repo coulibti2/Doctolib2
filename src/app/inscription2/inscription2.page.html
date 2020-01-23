@@ -1,0 +1,69 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Inscription Doctor</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <form [formGroup]="inscriptionForm">
+      <ion-item>
+          <ion-label>Nom:</ion-label>
+          <ion-input formControlName="nom" type="text" [(ngModel)]="nom" placeholder="votre nom..."></ion-input>
+      </ion-item>
+
+          <div class="error-messages">
+            <ng-container *ngFor="let error of errorMessages.nom">
+              <div class="error-message" *ngIf="inscriptionForm.get('nom').hasError(error.type) && (inscriptionForm.get('nom').dirty || inscriptionForm.get('nom').touched)">
+                {{ error.message }}
+              </div>
+            </ng-container>
+          </div>
+            <!---------------------------------------------------------------------------------------------------------------->
+
+      <ion-item>
+          <ion-label>Prénom:</ion-label>
+          <ion-input formControlName="prenom" type="text" [(ngModel)]="prenom" placeholder="votre prénom..."></ion-input>
+      </ion-item>
+
+          <div class="error-messages">
+            <ng-container *ngFor="let error of errorMessages.prenom">
+              <div class="error-message" *ngIf="inscriptionForm.get('prenom').hasError(error.type) && (inscriptionForm.get('prenom').dirty || inscriptionForm.get('prenom').touched)">
+                {{ error.message }}
+              </div>
+            </ng-container>
+          </div>
+            <!---------------------------------------------------------------------------------------------------------------->
+      <ion-item>
+        <ion-label>adresse:</ion-label>
+        <ion-input formControlName="adresse" type="mail" [(ngModel)]="adresse" placeholder="votre adresse..."></ion-input>
+      </ion-item>
+
+          <div class="error-messages">
+            <ng-container *ngFor="let error of errorMessages.adresse">
+              <div class="error-message" *ngIf="inscriptionForm.get('adresse').hasError(error.type) && (inscriptionForm.get('adresse').dirty || inscriptionForm.get('adresse').touched)">
+                {{ error.message }}
+              </div>
+            </ng-container>
+          </div>
+            <!---------------------------------------------------------------------------------------------------------------->
+
+
+      <ion-item>
+        <ion-label>Ville:</ion-label>
+        <ion-input formControlName="ville" type="ville" [(ngModel)]="ville" placeholder="Votre ville.."></ion-input>
+      </ion-item>
+
+          <div class="error-messages">
+            <ng-container *ngFor="let error of errorMessages.ville">
+              <div class="error-message" *ngIf="inscriptionForm.get('ville').hasError(error.type) && (inscriptionForm.get('ville').dirty || inscriptionForm.get('ville').touched)">
+                {{ error.message }}
+              </div>
+            </ng-container>
+          </div>
+
+
+
+            <ion-button (click)="add()" [disabled]="!inscriptionForm.valid" shape="round" size="defaut" color="primary" expand="block" href="patient"> Enregistrer</ion-button>
+            <ion-button  href="login" shape="round" size="defaut" color="danger" expand="block"> Annuler</ion-button>
+    </form>
+</ion-content>

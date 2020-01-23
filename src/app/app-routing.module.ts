@@ -14,6 +14,8 @@ const routes: Routes = [
   { path: 'login2', loadChildren: './login2/login2.module#Login2PageModule' },
   { path: 'form', loadChildren: './form/form.module#FormPageModule' },
   { path: 'inscription2', loadChildren: './inscription2/inscription2.module#Inscription2PageModule' },
+  { path: 'calendar2', loadChildren: './calendar2/calendar2.module#Calendar2PageModule' },
+  { path: 'event2', loadChildren: './event2/event2.module#Event2PageModule' },
 ];
 
 @NgModule({

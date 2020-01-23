@@ -14,6 +14,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { EventPageModule } from './event/event.module';
+import { Event2PageModule } from './event2/event2.module';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyBTnMteLd0stYCnmRRSd2EP3YJYRa4BKSk",
@@ -36,7 +37,8 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
-      EventPageModule
+      EventPageModule,
+      Event2PageModule
   ],
 
   providers: [

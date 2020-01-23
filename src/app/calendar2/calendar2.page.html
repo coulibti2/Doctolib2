@@ -1,0 +1,54 @@
+<<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button color="light">
+        <ion-icon slot="icon-only" name="calendar"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title> {{ currentMonth }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="showAddEvent" class="ion-padding">
+    <ion-item>
+      <ion-label><b>Titre:</b></ion-label>
+      <ion-input type="text" placeholder="Titre" [(ngModel)]="newEvent.title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><b>Description:</b></ion-label>
+      <ion-input type="text" placeholder="Description" [(ngModel)]="newEvent.description"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><b>Début</b></ion-label>
+      <ion-datetime doneText="OK" cancelText="Annuler" i18n displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMM D HH:mm" [(ngModel)]="newEvent.startTime" [min]="minDate"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label><b>Fin</b></ion-label>
+      <ion-datetime doneText="OK" cancelText="Annuler" displayFormat="DD/MM/YYYY HH:mm" pickerFormat="MMM D HH:mm" [(ngModel)]="newEvent.endTime" [min]="minDate"></ion-datetime>
+    </ion-item>
+    <ion-button color="warning" expand="block" (click)="addEvent()">Ajouter</ion-button>
+  </div>
+
+
+  <calendar *ngIf="!showAddEvent" id="myCalendar"
+            locale="fr-FR"
+            [eventSource]="allEvents"
+            calendarMode="week"
+            startHour="9"
+            endHour="16"
+            step="120"
+            startingDayWeek="1"
+
+            [currentDate]="currentDate"
+            (onTitleChanged)="onViewTitleChanged($event)"
+            (onTimeSelected)="onTimeSelected($event)"
+            (onEventSelected)="onEventSelected($event)">
+
+    >
+  </calendar>
+
+
+
+</ion-content>
+
